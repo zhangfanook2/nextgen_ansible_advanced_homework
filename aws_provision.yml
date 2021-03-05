@@ -8,7 +8,7 @@
         path: /root/bin
         state: directory
     - name: get script common.sh
-      get_url:
+      eet_url:
         url: "{{ param_repo_base }}/scripts/common.sh"
         dest: /root/common.sh
         mode: 0755
@@ -42,7 +42,7 @@
     # Using this script will always deploy environments in the us-east-1 region.
     # TODO: this shell task is not working yet!
     - name: order service on opentlc
-      shell: source /root/credential.rc; /root/order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced' -t 1
+      shell: source /root/credential.rc; /root/order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced - Three Tier App' -t 1
       args:
         chdir: /root
     - name: Wait for mail
