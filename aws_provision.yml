@@ -1,5 +1,5 @@
 ---
-- hosts: workstation
+- hosts: localhost
   become: true
   gather_facts: false
   tasks:
