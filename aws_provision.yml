@@ -8,7 +8,7 @@
         path: /root/bin
         state: directory
     - name: get script common.sh
-      eet_url:
+      get_url:
         url: "{{ param_repo_base }}/scripts/common.sh"
         dest: /root/common.sh
         mode: 0755
