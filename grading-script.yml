@@ -4,6 +4,7 @@
     OSP_GUID: "{{ lookup('env','OSP_GUID') }}"
     OSP_DOMAIN: "{{ lookup('env','OSP_DOMAIN') }}"
     TOWER_GUID: "{{ lookup('env','TOWER_GUID') }}"
+    THREE_TIER_GUID: "{{ lookup('env','THREE_TIER_GUID') }}"
   tasks:
   - name: Create In-memory Inventory
     add_host: 
@@ -41,7 +42,7 @@
   - name: Fail
     fail:
     when: "'Ansible' not in qa_webpage.results[0].content" 
-
+    ignore_errors: yes
   
 - hosts: localhost
   vars:
